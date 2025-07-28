@@ -462,8 +462,8 @@ RectTransform:
   - {fileID: 5742266570971181018}
   - {fileID: 1192716954023205335}
   - {fileID: 7594354261367124798}
-  - {fileID: 3486720869744662175}
   - {fileID: 3711468339070516889}
+  - {fileID: 3486720869744662175}
   m_Father: {fileID: 158385991225777731}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 9098006792228172952}
   - component: {fileID: 5476685532084640200}
   m_Layer: 0
-  m_Name: RibbonLower
+  m_Name: LowerRibbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -807,6 +807,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46631a8be8d66d248be5017d10f4b8d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyImage: {fileID: 3401938920663568621}
+  upperRibbonName: {fileID: 4306172326656309890}
+  lowerRibbonName: {fileID: 6918483914388056130}
 --- !u!1 &6146490314009360081
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +901,7 @@ GameObject:
   - component: {fileID: 3945963521058983839}
   - component: {fileID: 5486684960023702797}
   m_Layer: 0
-  m_Name: RibbonMiddle
+  m_Name: UpperRibbon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -974,7 +977,7 @@ GameObject:
   - component: {fileID: 631338923399010477}
   - component: {fileID: 4306172326656309890}
   m_Layer: 0
-  m_Name: Health Text
+  m_Name: UpperRibbonName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1110,7 +1113,7 @@ GameObject:
   - component: {fileID: 1486485704640012919}
   - component: {fileID: 6918483914388056130}
   m_Layer: 0
-  m_Name: Health Text
+  m_Name: LowerRibbonName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1228,7 +1231,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 68.85962, y: 0, z: 22.507454, w: 0}
+  m_margin: {x: -23.5228, y: 0, z: -74.61228, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
