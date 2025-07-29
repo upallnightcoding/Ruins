@@ -16,5 +16,6 @@ public class PlayingCardSO : ScriptableObject
 public enum PlayingCardType
 {
     ENEMY,
-    INVENTORY
+    INVENTORY,
+    BACK
 }
