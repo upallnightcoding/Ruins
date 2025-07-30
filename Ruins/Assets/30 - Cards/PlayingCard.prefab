@@ -815,6 +815,7 @@ MonoBehaviour:
   damageIcon: {fileID: 4285182941071322927}
   lowerRibbon: {fileID: 4867458071332756701}
   upperRibbon: {fileID: 7224726927209994959}
+  description: {fileID: 1797324024152641755}
 --- !u!1 &7224726927209994959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1092,7 +1093,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: This spell induces sleep.  The victum, can not move or speak for one turn.
+  m_text: XXX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: def54c7cf6b9a1844bb1af707d2d4a49, type: 2}
   m_sharedMaterial: {fileID: -6627135030329028012, guid: def54c7cf6b9a1844bb1af707d2d4a49, type: 2}
@@ -1119,8 +1120,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

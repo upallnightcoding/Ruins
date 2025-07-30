@@ -7,6 +7,8 @@ public class PlayingCardSO : ScriptableObject
 
     public string cardName;
 
+    public string description;
+
     public Sprite cardImage;
 
     public int health;
@@ -17,5 +19,5 @@ public enum PlayingCardType
 {
     ENEMY,
     INVENTORY,
-    BACK
+    DECK
 }

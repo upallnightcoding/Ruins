@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed720bd5cab74be489cf8173a935b71e, type: 3}
   m_Name: TestCardXX
   m_EditorClassIdentifier: 
-  playingCardType: 0
+  playingCardType: 2
   cardName: Card Back
+  description: 
   cardImage: {fileID: 21300000, guid: 84d12f62df92e9b4196b1a1133d2071b, type: 3}
   health: 0
   damage: 0

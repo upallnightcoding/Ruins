@@ -16,7 +16,7 @@ public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExi
     [SerializeField] private GameObject lowerRibbon;
     [SerializeField] private GameObject upperRibbon;
 
-
+    [SerializeField] private TMP_Text description;
 
     private PlayingCardSO playingCard;
 
@@ -36,28 +36,33 @@ public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExi
         lowerRibbonName.text = playingCard.cardName;
         upperRibbonName.text = playingCard.cardName;
 
-        switch(playingCard.playingCardType)
+        description.text = playingCard.description;
+
+        healthIcon.SetActive(false);
+        damageIcon.SetActive(false);
+
+        upperRibbon.SetActive(false);
+        lowerRibbon.SetActive(false);
+
+        enemyImage.SetActive(false);
+        inventoryImage.SetActive(false);
+
+        switch (playingCard.playingCardType)
         {
-            case PlayingCardType.BACK:
-                healthIcon.SetActive(false);
-                damageIcon.SetActive(false);
-                lowerRibbon.SetActive(false);
+            case PlayingCardType.DECK:
+                enemyImage.SetActive(true);
                 break;
             case PlayingCardType.ENEMY:
+                healthIcon.SetActive(true);
+                damageIcon.SetActive(true);
                 enemyImage.SetActive(true);
-                inventoryImage.SetActive(false);
-                upperRibbon.SetActive(false);
                 lowerRibbon.SetActive(true);
                 break;
             case PlayingCardType.INVENTORY:
-                enemyImage.SetActive(false);
                 inventoryImage.SetActive(true);
-
                 upperRibbon.SetActive(true);
-                lowerRibbon.SetActive(false);
-                healthIcon.SetActive(false);
+                damageIcon.SetActive(true);
                 break;
-
         }
     }
 

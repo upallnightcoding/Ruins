@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed720bd5cab74be489cf8173a935b71e, type: 3}
-  m_Name: TestInv00
+  m_Name: TestInv03
   m_EditorClassIdentifier: 
   playingCardType: 1
-  cardName: Ice Cage
-  description: Freezes enemies for one turn, lowing their damage.
-  cardImage: {fileID: 21300000, guid: ee93db4368f2dda47a367ef786782f68, type: 3}
+  cardName: 
+  description: This is spell number #30 ...
+  cardImage: {fileID: 21300000, guid: a0d8bdcdb8ae44d43a5abd935b771c62, type: 3}
   health: 0
   damage: 0

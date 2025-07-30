@@ -10,6 +10,12 @@ public class GameManagerCntrl : MonoBehaviour
     [SerializeField] private PlayingCardSO testCard04;
     [SerializeField] private PlayingCardSO testCard05;
 
+    [SerializeField] private PlayingCardSO testInv00;
+    [SerializeField] private PlayingCardSO testInv01;
+    [SerializeField] private PlayingCardSO testInv02;
+    [SerializeField] private PlayingCardSO testInv03;
+    [SerializeField] private PlayingCardSO testInv04;
+
     [SerializeField] private GameObject playerCardPrefab;
 
     private float topRow = 6.0f;
@@ -19,7 +25,7 @@ public class GameManagerCntrl : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        RenderCard(testCardXX, new Vector3(-18.0f, 0.0f, topRow));
+        RenderCard(testCardXX, new Vector3(-18.0f, 0.0f, 1.5f));
         RenderCard(testCard01, new Vector3(-12.0f, 0.0f, topRow));
         RenderCard(testCard02, new Vector3(-6.0f, 0.0f, topRow));
         RenderCard(testCard03, new Vector3(0.0f, 0.0f, topRow));
@@ -27,11 +33,11 @@ public class GameManagerCntrl : MonoBehaviour
         RenderCard(testCard05, new Vector3(12.0f, 0.0f, topRow));
 
         //RenderCard(testCard00, new Vector3(-18.0f, 0.0f, bottomRow));
-        RenderCard(testCard01, new Vector3(-12.0f, 0.0f, bottomRow));
-        RenderCard(testCard02, new Vector3(-6.0f, 0.0f, bottomRow));
-        RenderCard(testCard03, new Vector3(0.0f, 0.0f, bottomRow));
-        RenderCard(testCard04, new Vector3(6.0f, 0.0f, bottomRow));
-        RenderCard(testCard05, new Vector3(12.0f, 0.0f, bottomRow));
+        RenderCard(testInv00, new Vector3(-12.0f, 0.0f, bottomRow));
+        RenderCard(testInv01, new Vector3(-6.0f, 0.0f, bottomRow));
+        RenderCard(testInv02, new Vector3(0.0f, 0.0f, bottomRow));
+        RenderCard(testInv03, new Vector3(6.0f, 0.0f, bottomRow));
+        RenderCard(testInv04, new Vector3(12.0f, 0.0f, bottomRow));
     }
 
     private void RenderCard(PlayingCardSO playingCard, Vector3 position)
