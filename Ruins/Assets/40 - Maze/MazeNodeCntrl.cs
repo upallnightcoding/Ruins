@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MazeNodeCntrl : MonoBehaviour
 {
+    [SerializeField] private GameObject nodeBase;
     [SerializeField] private GameObject northLink;
     [SerializeField] private GameObject southLink;
     [SerializeField] private GameObject eastLink;
@@ -21,9 +22,18 @@ public class MazeNodeCntrl : MonoBehaviour
         westLink.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Set(MazeNode node)
     {
-        
+        if (node.NorthNode != null) SetNorthLink();
+        if (node.SouthNode != null) SetSouthLink();
+        if (node.EastNode != null) SetEastLink();
+        if (node.WestNode != null) SetWestLink();
+
+        switch(node.GetMazeNodeType())
+        {
+            case MazeNodeType.STARTING:
+                nodeBase.GetComponent<Renderer>().material.color = Color.green;
+                break;
+        }
     }
 }
