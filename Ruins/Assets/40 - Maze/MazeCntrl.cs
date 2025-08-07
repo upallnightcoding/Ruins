@@ -7,12 +7,18 @@ public class MazeCntrl : MonoBehaviour
     [SerializeField] private GameObject mazeNodePrefab;
 
     private float size = 12.0f;
-    private int width = 5;
-    private int height = 5;
+    private int width = 10;
+    private int height = 10;
+
+    //private MazeNode startingPoint = null;
+    //private MazeNode endingPoint = null;
 
     private MazeNode[,] mazeNode;
 
     private Stack<MazeNode> mazeNodeStack;
+
+    private int pathSize = 0;
+    private MazeNode[] mazePath = null;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +47,12 @@ public class MazeCntrl : MonoBehaviour
                 nextMazeNode.MarkNodeAsClosed();
                 mazeNodeStack.Push(nextMazeNode);
                 SetupNodeLink(currentNode, nextMazeNode);
+
+                if (mazeNodeStack.Count > pathSize)
+                {
+                    mazePath = mazeNodeStack.ToArray();
+                    pathSize = mazeNodeStack.Count;
+                }
             }
         }
     }
@@ -84,7 +96,6 @@ public class MazeCntrl : MonoBehaviour
 
         MazeNode startingPoint = GetRandomMazeNode();
         startingPoint.MarkNodeAsClosed();
-        startingPoint.MarkAsStartNode();
 
         mazeNodeStack.Push(startingPoint);
     }
@@ -124,6 +135,25 @@ public class MazeCntrl : MonoBehaviour
 
     private IEnumerator RenderMaze()
     {
+        bool firstnode = true;
+        MazeNode startingPoint = null;
+        MazeNode endingPoint = null;
+
+        foreach (MazeNode mazeNode in mazePath)
+        {
+            if (firstnode)
+            {
+                firstnode = false;
+                startingPoint = mazeNode;
+            }
+
+            mazeNode.MarkAsPathNode();
+            endingPoint = mazeNode;
+        }
+
+        startingPoint.MarkAsStartNode();
+        endingPoint.MarkAsEndingNode();
+
         for (int h = 0; h < height; h++)
         {
             for (int w = 0; w < width; w++)
@@ -135,6 +165,7 @@ public class MazeCntrl : MonoBehaviour
                 go.GetComponent<MazeNodeCntrl>().Set(mazeNode[w, h]);
             }
         }
+
     }
 
     private bool IsOnBoard(int w, int h)

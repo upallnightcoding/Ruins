@@ -34,6 +34,12 @@ public class MazeNodeCntrl : MonoBehaviour
             case MazeNodeType.STARTING:
                 nodeBase.GetComponent<Renderer>().material.color = Color.green;
                 break;
+            case MazeNodeType.ENDING:
+                nodeBase.GetComponent<Renderer>().material.color = Color.red;
+                break;
+            case MazeNodeType.PATH:
+                nodeBase.GetComponent<Renderer>().material.color = Color.blue;
+                break;
         }
     }
 }

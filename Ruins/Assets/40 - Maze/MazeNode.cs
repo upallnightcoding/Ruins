@@ -52,13 +52,25 @@ public class MazeNode
     {
         type = MazeNodeType.STARTING;
     }
+
+    public void MarkAsEndingNode()
+    {
+        type = MazeNodeType.ENDING;
+    }
+
+    public void MarkAsPathNode()
+    {
+        type = MazeNodeType.PATH;
+    }
    
 }
 
 public enum MazeNodeType
 {
     EMPTY,
-    STARTING
+    STARTING,
+    ENDING,
+    PATH
 }
 
 public enum MazeNodeStatus
