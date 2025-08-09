@@ -1,6 +1,8 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class MazeNodeCntrl : MonoBehaviour
+public class MazeNodeCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private GameObject nodeBase;
     [SerializeField] private GameObject northLink;
@@ -41,5 +43,15 @@ public class MazeNodeCntrl : MonoBehaviour
                 nodeBase.GetComponent<Renderer>().material.color = Color.blue;
                 break;
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        Debug.Log("On Pointer Enter ...");
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        Debug.Log("On Pointer Exit ...");
     }
 }

@@ -7,8 +7,8 @@ public class MazeCntrl : MonoBehaviour
     [SerializeField] private GameObject mazeNodePrefab;
 
     private float size = 12.0f;
-    private int width = 10;
-    private int height = 10;
+    private int width = 4;
+    private int height = 4;
 
     //private MazeNode startingPoint = null;
     //private MazeNode endingPoint = null;

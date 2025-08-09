@@ -15,9 +15,4 @@ public class PlayingCardSO : ScriptableObject
     public int damage;
 }
 
-public enum PlayingCardType
-{
-    ENEMY,
-    INVENTORY,
-    DECK
-}
+

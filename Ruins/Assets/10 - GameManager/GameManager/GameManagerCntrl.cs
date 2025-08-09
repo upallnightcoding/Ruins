@@ -20,7 +20,9 @@ public class GameManagerCntrl : MonoBehaviour
 
     private float topRow = 6.0f;
     private float bottomRow = -3.0f;
-   
+
+    private PlayingCardCntrl highLightCard = null;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,9 +48,33 @@ public class GameManagerCntrl : MonoBehaviour
         go.GetComponent<PlayingCardCntrl>().Set(playingCard);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out RaycastHit hit))
+        {
+            PlayingCardCntrl card = hit.collider.gameObject.GetComponent<PlayingCardCntrl>();
+
+            Debug.Log($"card/highLightCard: {card}/{highLightCard}");
+
+            if ((card != null) && (highLightCard == null))
+            {
+                highLightCard = card;
+                highLightCard.SetHighLight();
+                highLightCard.TurnOver();
+            } else if ((card == null) && (highLightCard != null))
+            {
+                highLightCard.UnSetHighLight();
+                highLightCard = null;
+            }
+        } else
+        {
+            if (highLightCard != null)
+            {
+                highLightCard.UnSetHighLight();
+                highLightCard = null;
+            }
+        }
     }
 }

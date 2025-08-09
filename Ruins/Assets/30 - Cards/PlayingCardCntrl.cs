@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using UnityEngine.EventSystems;
+using DG.Tweening;
 
-public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+public class PlayingCardCntrl : MonoBehaviour
 {
     [SerializeField] private GameObject enemyImage;
     [SerializeField] private GameObject inventoryImage;
+
     [SerializeField] private TMP_Text upperRibbonName;
     [SerializeField] private TMP_Text lowerRibbonName;
 
@@ -18,9 +19,12 @@ public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     [SerializeField] private TMP_Text description;
 
-    private PlayingCardSO playingCard;
+    [SerializeField] private GameObject highLight;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private bool highLightSw = false;
+
+    private string cardName;
+
     void Start()
     {
         
@@ -28,7 +32,7 @@ public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExi
 
     public void Set(PlayingCardSO playingCard)
     {
-        this.playingCard = playingCard;
+        cardName = playingCard.playingCardType.ToString() + " " + playingCard.cardName;
 
         enemyImage.GetComponent<Image>().sprite = playingCard.cardImage;
         inventoryImage.GetComponent<Image>().sprite = playingCard.cardImage;
@@ -72,13 +76,33 @@ public class PlayingCardCntrl : MonoBehaviour, IPointerEnterHandler, IPointerExi
         
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void SetHighLight()
     {
-        Debug.Log("On Pointer Enter ...");
+        highLightSw = true;
+        highLight.SetActive(highLightSw);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void UnSetHighLight()
     {
-        Debug.Log("On Pointer Exit ...");
+        highLightSw = false;
+        highLight.SetActive(highLightSw);
+    }
+
+    public void TurnOver()
+    {
+        transform.DORotate(new Vector3(0.0f, 0.0f, 180.0f), 1.0f);
+    }
+
+    public override string ToString()
+    {
+        return (cardName);
     }
 }
+
+public enum PlayingCardType
+{
+    ENEMY,
+    INVENTORY,
+    DECK
+}
+
