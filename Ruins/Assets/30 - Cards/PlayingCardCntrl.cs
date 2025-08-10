@@ -21,6 +21,8 @@ public class PlayingCardCntrl : MonoBehaviour
 
     [SerializeField] private GameObject highLight;
 
+    [SerializeField] private GameObject vfx;
+
     private bool highLightSw = false;
 
     private string cardName;
@@ -91,6 +93,7 @@ public class PlayingCardCntrl : MonoBehaviour
     public void TurnOver()
     {
         transform.DORotate(new Vector3(0.0f, 0.0f, 180.0f), 1.0f);
+        Instantiate(vfx, transform.position, Quaternion.identity);
     }
 
     public override string ToString()

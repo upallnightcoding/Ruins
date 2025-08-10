@@ -18,6 +18,8 @@ public class GameManagerCntrl : MonoBehaviour
 
     [SerializeField] private GameObject playerCardPrefab;
 
+   
+
     private float topRow = 6.0f;
     private float bottomRow = -3.0f;
 

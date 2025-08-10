@@ -1006,6 +1006,7 @@ MonoBehaviour:
   upperRibbon: {fileID: 7224726927209994959}
   description: {fileID: 1797324024152641755}
   highLight: {fileID: 5133605344826748865}
+  vfx: {fileID: 6137185823661952477, guid: ed9c5eed7d0b2dd478b2a4bff3f0ed1e, type: 3}
 --- !u!65 &2487000545797930363
 BoxCollider:
   m_ObjectHideFlags: 0
